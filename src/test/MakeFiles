@@ -1,0 +1,14 @@
+CC=gcc
+CFLAGS=-Wall
+
+all: build test
+
+build:
+	$(CC) $(CFLAGS) src/main.c -o output
+
+test:
+	$(CC) $(CFLAGS) tests/test_main.c -o test_output
+	./test_output
+
+clean:
+	rm -f output test_output
